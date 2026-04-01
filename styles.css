@@ -316,7 +316,8 @@ a {
 .cards.four-up,
 .capability-grid,
 .presentation-grid,
-.example-grid {
+.example-grid,
+.history-grid {
   display: grid;
   gap: 1.5rem;
 }
@@ -332,11 +333,39 @@ a {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
+.history-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-bottom: 1.5rem;
+}
+
 .feature-card,
 .capability-card,
 .agenda-card,
-.scenario-card {
+.scenario-card,
+.history-card {
   height: 100%;
+}
+
+.history-step {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  background: rgba(41, 87, 255, 0.1);
+  color: var(--primary-strong);
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.history-card h3 {
+  margin-top: 0;
+  letter-spacing: -0.03em;
+}
+
+.highlight-card {
+  background: linear-gradient(180deg, rgba(41, 87, 255, 0.08), rgba(255,255,255,0.96));
 }
 
 .feature-card h3,
@@ -657,6 +686,7 @@ blockquote {
   .capability-grid,
   .presentation-grid,
   .example-grid,
+  .history-grid,
   .arch-row,
   .arch-subgrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -722,6 +752,7 @@ blockquote {
   .capability-grid,
   .presentation-grid,
   .example-grid,
+  .history-grid,
   .arch-row,
   .arch-subgrid {
     grid-template-columns: 1fr;

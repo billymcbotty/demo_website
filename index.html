@@ -25,6 +25,7 @@
         </a>
         <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
         <nav class="nav">
+          <a href="#history">History</a>
           <a href="#ladder">The ladder</a>
           <a href="#llm">LLMs</a>
           <a href="#orchestration">Orchestration</a>
@@ -41,12 +42,12 @@
         <div class="container hero-grid">
           <div>
             <p class="eyebrow">A non-technical guide for a 45 minute presentation</p>
-            <h1>To understand OpenClaw, start with LLMs. Then climb the ladder to orchestration and OS-level agents.</h1>
+            <h1>OpenClaw makes the most sense when you see the full arc from machine learning to LLMs to orchestrators to OS-level agents.</h1>
             <p class="lede">
-              Most people jump straight from “chatbot” to “OpenClaw.” That skips the crucial middle step. The real story is a progression: LLMs became chat agents, chat agents needed orchestration, and OpenClaw is what happens when orchestration moves onto a real operating system.
+              The clearer story is historical. We started with classic machine learning, then built larger neural networks, then large language models. LLMs began as text-in, text-out applications. Context windows grew, uploads arrived, then RAG emerged when context was scarce. Context windows grew again, tool layers and MCPs appeared, orchestrators began coordinating multiple models and tools, and eventually the agent stopped being just an application and started becoming the operator of the machine it lived on. That is the leap OpenClaw represents.
             </p>
             <div class="hero-actions">
-              <a class="button primary" href="#ladder">See the ladder</a>
+              <a class="button primary" href="#history">See the history</a>
               <a class="button secondary" href="#comparison">Go to the comparison table</a>
             </div>
             <div class="hero-stats">
@@ -94,13 +95,91 @@
         </div>
       </section>
 
-      <section id="ladder" class="section alt">
+      <section id="history" class="section alt">
         <div class="container">
           <div class="section-heading">
-            <p class="eyebrow">The big picture</p>
+            <p class="eyebrow">The long arc</p>
+            <h2>From machine learning to an LLM that can operate a computer</h2>
+            <p>
+              This is the framing I would use for your audience. OpenClaw is not just another feature layer on top of a chatbot. It is the latest step in a long progression of how we train systems, scale models, expand context, and let software act.
+            </p>
+          </div>
+
+          <div class="history-grid">
+            <article class="card history-card">
+              <span class="history-step">1</span>
+              <h3>Classical machine learning</h3>
+              <p>
+                Early practical AI systems were trained on examples and labels. Supervised learning taught models to map inputs to outputs. Unsupervised learning looked for structure in data. Reinforcement learning optimized behavior through rewards and penalties.
+              </p>
+            </article>
+            <article class="card history-card">
+              <span class="history-step">2</span>
+              <h3>Larger neural networks</h3>
+              <p>
+                As compute and data scaled, neural networks became far more capable. Instead of hand-crafting many narrow systems, researchers started building larger general-purpose models that could learn richer representations.
+              </p>
+            </article>
+            <article class="card history-card">
+              <span class="history-step">3</span>
+              <h3>Large language models</h3>
+              <p>
+                Those larger neural networks broke into a new category: LLMs. At first, the core pattern was simple. Give the model text. Get back text. Powerful, but still fundamentally a text-in, text-out application.
+              </p>
+            </article>
+            <article class="card history-card">
+              <span class="history-step">4</span>
+              <h3>Growing context and uploads</h3>
+              <p>
+                Context windows expanded. We started attaching files, documents, and images. The model could now see more of the world, but context was still precious and easy to exhaust.
+              </p>
+            </article>
+            <article class="card history-card">
+              <span class="history-step">5</span>
+              <h3>RAG when context was scarce</h3>
+              <p>
+                Retrieval-augmented generation emerged because we could not fit everything into context at once. Instead of handing the model all the knowledge, we searched for the relevant pieces and inserted only what was needed.
+              </p>
+            </article>
+            <article class="card history-card">
+              <span class="history-step">6</span>
+              <h3>MCPs and tool layers</h3>
+              <p>
+                Then context windows expanded again, and the frontier shifted. It was no longer only about searching for text. It was about reaching systems. MCPs and tool layers let models call services, fetch data, and trigger actions outside the chat window.
+              </p>
+            </article>
+            <article class="card history-card">
+              <span class="history-step">7</span>
+              <h3>Orchestrators and sub-agents</h3>
+              <p>
+                Once models could use tools, we needed software to coordinate them. Orchestrators assembled context, chose tools, managed retries, routed tasks, and sometimes delegated work to other models as sub-agents.
+              </p>
+            </article>
+            <article class="card history-card highlight-card">
+              <span class="history-step">8</span>
+              <h3>OS-level agents like OpenClaw</h3>
+              <p>
+                The final jump is that the orchestrator stops being only an application and starts becoming the operator of the machine it is installed on. The agent can read files, write files, use browsers, run commands, schedule tasks, message people, and act as a real computer user. That is what you have here: an LLM controlling a computer and taking instructions from you.
+              </p>
+            </article>
+          </div>
+
+          <div class="callout card">
+            <h3>The core narrative</h3>
+            <p>
+              Supervised learning, unsupervised learning, and reinforcement learning gave us better ways to train models. Larger neural networks gave us LLMs. Bigger context, uploads, RAG, MCPs, and orchestration gave those LLMs more reach. OpenClaw is what happens when that orchestrated reach extends into the operating system itself.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="ladder" class="section">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">The short version</p>
             <h2>The ladder from language model to operating agent</h2>
             <p>
-              This is the cleanest way to explain OpenClaw to non-technical users. Instead of starting with product features, start with the evolution of AI systems and place OpenClaw at the next step.
+              After the long historical arc, this is the compressed mental model: LLM, chat agent, orchestrated agent, then OS-level agent runtime.
             </p>
           </div>
 
