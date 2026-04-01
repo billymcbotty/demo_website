@@ -221,6 +221,35 @@ a {
   align-self: stretch;
 }
 
+.hero-photo-block {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 1.25rem;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.hero-photo {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 6px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 18px 38px rgba(27, 39, 74, 0.16);
+}
+
+.hero-photo-copy h3 {
+  margin: 0 0 0.5rem;
+  letter-spacing: -0.03em;
+}
+
+.hero-photo-copy p {
+  margin: 0;
+  color: var(--muted);
+}
+
 .stack-diagram {
   display: grid;
   gap: 0.85rem;
@@ -647,10 +676,17 @@ blockquote {
     place-items: center;
   }
 
+  .hero-photo-block,
   .comments-header,
   .comment-input-mock {
     grid-template-columns: 1fr;
     display: grid;
+  }
+
+  .hero-photo {
+    width: 140px;
+    height: 140px;
+    margin: 0 auto;
   }
 
   .reply-card {
