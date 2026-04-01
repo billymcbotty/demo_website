@@ -31,8 +31,8 @@
           <a href="#orchestration">Orchestration</a>
           <a href="#openclaw">OpenClaw</a>
           <a href="#comparison">Comparison</a>
-          <a href="#comments-demo">Comments demo</a>
-          <a href="#presentation">Presentation flow</a>
+          <a href="#safety">Safety</a>
+          <a href="#top">Top</a>
         </nav>
       </div>
     </header>
@@ -41,7 +41,7 @@
       <section class="hero section">
         <div class="container hero-grid">
           <div>
-            <p class="eyebrow">A non-technical guide for a 45 minute presentation</p>
+            <p class="eyebrow">A clear guide for non-technical readers</p>
             <h1>OpenClaw makes the most sense when you see the full arc from machine learning to LLMs to orchestrators to OS-level agents.</h1>
             <p class="lede">
               The clearer story is historical. We started with classic machine learning, then built larger neural networks, then large language models. LLMs began as text-in, text-out applications. Context windows grew, uploads arrived, then RAG emerged when context was scarce. Context windows grew again, tool layers and MCPs appeared, orchestrators began coordinating multiple models and tools, and eventually the agent stopped being just an application and started becoming the operator of the machine it lived on. That is the leap OpenClaw represents.
@@ -529,7 +529,7 @@
         </div>
       </section>
 
-      <section class="section">
+      <section id="safety" class="section alt">
         <div class="container">
           <div class="section-heading">
             <p class="eyebrow">Safety and control</p>
@@ -552,175 +552,6 @@
               <h3>Session separation</h3>
               <p>Main chats, group chats, and isolated tasks can be separated so context and permissions do not blur together unnecessarily.</p>
             </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="comments-demo" class="section alt">
-        <div class="container">
-          <div class="section-heading">
-            <p class="eyebrow">Demo extension</p>
-            <h2>How a live comments section could look</h2>
-            <p>
-              For a short-lived demo site, the cleanest approach is GitHub Pages plus a GitHub-backed comments system such as Giscus. Visitors post comments, Billy drafts or posts replies, and the thread stays visible right on the page.
-            </p>
-          </div>
-
-          <div class="cards two-up">
-            <article class="card explainer-card">
-              <h3>Recommended demo architecture</h3>
-              <ol>
-                <li>Visitor submits a comment from the page.</li>
-                <li>The comment lands in GitHub Discussions via Giscus.</li>
-                <li>OpenClaw monitors new comments.</li>
-                <li>Billy drafts or posts a reply.</li>
-                <li>The reply appears back on the site thread.</li>
-              </ol>
-              <p>
-                For a demo, this gives you the best mix of realism and low setup overhead.
-              </p>
-            </article>
-            <article class="card caution-card">
-              <h3>Why this is good for a demo</h3>
-              <ul class="bullet-list">
-                <li>No separate database needed</li>
-                <li>Works naturally with GitHub Pages</li>
-                <li>Public discussion is easy to show live</li>
-                <li>The site can be taken down after the presentation</li>
-              </ul>
-            </article>
-          </div>
-
-          <div class="card comments-shell">
-            <div class="comments-header">
-              <div>
-                <p class="eyebrow">Visual mockup</p>
-                <h3>Discussion thread</h3>
-              </div>
-              <span class="time-chip">Demo concept</span>
-            </div>
-
-            <div class="comment-input-mock">
-              <div class="avatar">G</div>
-              <div class="comment-composer">
-                <strong>Leave a comment</strong>
-                <div class="composer-box">Ask a question about OpenClaw, agent orchestration, or the demo...</div>
-                <div class="composer-actions">
-                  <span class="ghost-pill">Sign in with GitHub</span>
-                  <span class="button primary small">Post comment</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="comment-thread">
-              <article class="comment-card">
-                <div class="comment-meta">
-                  <div class="avatar user">A</div>
-                  <div>
-                    <strong>Alice</strong>
-                    <span>Visitor • 2 min ago</span>
-                  </div>
-                </div>
-                <p>
-                  This is the first explanation of agent orchestration I have actually understood. Does OpenClaw replace ChatGPT, or does it sit around the model layer?
-                </p>
-              </article>
-
-              <article class="comment-card reply-card">
-                <div class="comment-meta">
-                  <div class="avatar bot">B</div>
-                  <div>
-                    <strong>Billy</strong>
-                    <span>Assistant reply • just now</span>
-                  </div>
-                </div>
-                <p>
-                  Better way to think about it: OpenClaw does not mainly replace a model. It wraps a model in runtime infrastructure. So the model remains the reasoning engine, while OpenClaw adds memory, sessions, tools, channels, and OS-level execution.
-                </p>
-              </article>
-
-              <article class="comment-card">
-                <div class="comment-meta">
-                  <div class="avatar user">M</div>
-                  <div>
-                    <strong>Marcus</strong>
-                    <span>Visitor • 5 min ago</span>
-                  </div>
-                </div>
-                <p>
-                  Could this run on a Raspberry Pi, or does it need a full workstation?
-                </p>
-              </article>
-
-              <article class="comment-card reply-card">
-                <div class="comment-meta">
-                  <div class="avatar bot">B</div>
-                  <div>
-                    <strong>Billy</strong>
-                    <span>Assistant reply • 3 min ago</span>
-                  </div>
-                </div>
-                <p>
-                  Yes, it can run on a Raspberry Pi. In fact, that is a common mental model for OpenClaw: a persistent personal agent running on your own machine rather than only inside a vendor app.
-                </p>
-              </article>
-            </div>
-
-            <div class="giscus-note">
-              In production, this visual block would be replaced by a live Giscus thread embedded on the page.
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="presentation" class="section alt">
-        <div class="container">
-          <div class="section-heading">
-            <p class="eyebrow">Suggested presentation flow</p>
-            <h2>A better 45 minute structure</h2>
-            <p>
-              This sequence is better than starting with product features. It teaches the audience just enough to understand why OpenClaw is a meaningful step forward.
-            </p>
-          </div>
-
-          <div class="presentation-grid">
-            <article class="card agenda-card">
-              <span class="time-chip">5 min</span>
-              <h3>1. What is an LLM?</h3>
-              <p>Define the model itself. Explain the brain without the body analogy.</p>
-            </article>
-            <article class="card agenda-card">
-              <span class="time-chip">7 min</span>
-              <h3>2. What is a chat agent?</h3>
-              <p>Walk through the evolution from prompts to files to knowledge bases to tool calling.</p>
-            </article>
-            <article class="card agenda-card">
-              <span class="time-chip">7 min</span>
-              <h3>3. Why orchestration matters</h3>
-              <p>Introduce the coordination layer around the model: context, tools, memory, retries, state.</p>
-            </article>
-            <article class="card agenda-card">
-              <span class="time-chip">8 min</span>
-              <h3>4. What OpenClaw is</h3>
-              <p>Use the gateway diagram and explain how channels, sessions, tools, and nodes fit together.</p>
-            </article>
-            <article class="card agenda-card">
-              <span class="time-chip">8 min</span>
-              <h3>5. Chat Agent vs OpenClaw</h3>
-              <p>Use the comparison table and the practical examples to make the difference concrete.</p>
-            </article>
-            <article class="card agenda-card">
-              <span class="time-chip">10 min</span>
-              <h3>6. Safety, questions, and close</h3>
-              <p>Explain why OS-level agency is powerful, why it needs controls, and why this matters as AI evolves.</p>
-            </article>
-          </div>
-
-          <div class="speaker-notes card">
-            <h3>Strong closing line</h3>
-            <blockquote>
-              The big shift is not just that the model got smarter. The big shift is that the model got situated. OpenClaw gives AI a place to live, tools to use, and ways to act.
-            </blockquote>
           </div>
         </div>
       </section>
