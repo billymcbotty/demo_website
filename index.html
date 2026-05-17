@@ -3,15 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>OpenClaw Explained</title>
+    <title>OpenClaw: Agent Orchestration and AI-Native Systems</title>
     <meta
       name="description"
-      content="A clear, non-technical walkthrough of LLMs, chat agents, orchestration, and how OpenClaw differs by operating on the OS."
+      content="A visually rich walkthrough of OpenClaw, agent orchestration, memory, tooling, governance, and the shift toward persistent digital teammates."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
@@ -21,549 +21,467 @@
       <div class="container nav-wrap">
         <a class="brand" href="#top">
           <span class="brand-mark">OC</span>
-          <span>OpenClaw Explained</span>
+          <span>OpenClaw</span>
         </a>
         <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
         <nav class="nav">
-          <a href="#history">History</a>
-          <a href="#ladder">The ladder</a>
-          <a href="#llm">LLMs</a>
-          <a href="#orchestration">Orchestration</a>
-          <a href="#openclaw">OpenClaw</a>
-          <a href="#comparison">Comparison</a>
-          <a href="#safety">Safety</a>
-          <a href="#top">Top</a>
+          <a href="#summary">Summary</a>
+          <a href="#shift">Industry shift</a>
+          <a href="#mental-model">Mental model</a>
+          <a href="#workflow">Workflow</a>
+          <a href="#architecture">Architecture</a>
+          <a href="#memory">Memory</a>
+          <a href="#risk">Governance</a>
+          <a href="#future">Future</a>
         </nav>
       </div>
     </header>
 
     <main id="top">
       <section class="hero section">
+        <div class="hero-backdrop"></div>
         <div class="container hero-grid">
-          <div>
-            <p class="eyebrow">A clear guide for non-technical readers</p>
-            <h1>OpenClaw makes the most sense when you see the full arc from machine learning to LLMs to orchestrators to OS-level agents.</h1>
+          <div class="hero-copy">
+            <p class="eyebrow">Lessons from running a local AI agent stack</p>
+            <h1>OpenClaw: agent orchestration and AI-native systems</h1>
             <p class="lede">
-              The clearer story is historical. We started with classic machine learning, then built larger neural networks, then large language models. LLMs began as text-in, text-out applications. Context windows grew, uploads arrived, then RAG emerged when context was scarce. Context windows grew again, tool layers and MCPs appeared, orchestrators began coordinating multiple models and tools, and eventually the agent stopped being just an application and started becoming the operator of the machine it lived on. That is the leap OpenClaw represents.
+              The clearest way to understand OpenClaw is to start with the industry shift. LLMs are moving from chat interfaces toward operational systems. OpenClaw is not the model. It is the runtime that coordinates models, tools, memory, workflows, and execution logic so an AI system can actually operate.
             </p>
             <div class="hero-actions">
-              <a class="button primary" href="#history">See the history</a>
-              <a class="button secondary" href="#comparison">Go to the comparison table</a>
+              <a class="button primary" href="#summary">Start with the summary</a>
+              <a class="button secondary" href="#architecture">See the architecture</a>
             </div>
-            <div class="hero-stats">
+            <div class="hero-stats cinematic-stats">
               <div>
-                <strong>4</strong>
-                <span>layers: LLM → Chat Agent → Orchestrated Agent → OpenClaw</span>
-              </div>
-              <div>
-                <strong>1</strong>
-                <span>gateway coordinating channels, sessions, tools, and nodes</span>
+                <strong>5 layers</strong>
+                <span>model, tools, skills, workflows, memory</span>
               </div>
               <div>
-                <strong>Real</strong>
-                <span>execution on the host OS, not only suggestions in a prompt box</span>
+                <strong>1 orchestrator</strong>
+                <span>routing channels, sessions, nodes, and execution</span>
+              </div>
+              <div>
+                <strong>Real action</strong>
+                <span>files, browser, commands, messages, and devices</span>
               </div>
             </div>
           </div>
-          <div class="hero-visual card">
-            <div class="hero-photo-block">
-              <img class="hero-photo" src="assets/billy-photo.jpg" alt="Billy avatar" />
-              <div class="hero-photo-copy">
-                <p class="eyebrow">Meet Billy</p>
-                <h3>The assistant behind the demo</h3>
-                <p>
-                  Billy is the assistant identity used in this demo. The site explains the runtime he operates in, not just the model answering the prompt.
-                </p>
-              </div>
+
+          <div class="hero-panel card glow-card">
+            <div class="hero-panel-top">
+              <div class="mini-kicker">Runtime execution flow</div>
+              <div class="status-pill">Live system mindset</div>
             </div>
-            <div class="stack-diagram">
-              <div class="stack-item">LLM</div>
-              <div class="stack-item">Chat Agent</div>
-              <div class="stack-item">Orchestrated Agent</div>
-              <div class="stack-item highlight">OpenClaw: OS-Level Agent Runtime</div>
-              <div class="stack-arrow">Each step adds more context, more coordination, and more real-world execution</div>
-              <div class="stack-tags">
-                <span>Memory</span>
-                <span>Sessions</span>
-                <span>Files</span>
-                <span>Browser</span>
-                <span>Channels</span>
-                <span>Nodes</span>
-              </div>
+            <div class="flow-stack">
+              <div class="flow-step active">User request</div>
+              <div class="flow-step">System prompt / soul.md</div>
+              <div class="flow-step">Memory retrieval</div>
+              <div class="flow-step">Agent planning</div>
+              <div class="flow-step">Tool selection</div>
+              <div class="flow-step">Tool execution</div>
+              <div class="flow-step">Reflection / validation</div>
+              <div class="flow-step final">Final response</div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="history" class="section alt">
-        <div class="container">
-          <div class="section-heading">
-            <p class="eyebrow">The long arc</p>
-            <h2>From machine learning to an LLM that can operate a computer</h2>
-            <p>
-              This is the framing I would use for your audience. OpenClaw is not just another feature layer on top of a chatbot. It is the latest step in a long progression of how we train systems, scale models, expand context, and let software act.
-            </p>
-          </div>
-
-          <div class="history-grid">
-            <article class="card history-card">
-              <span class="history-step">1</span>
-              <h3>Classical machine learning</h3>
-              <p>
-                Early practical AI systems were trained on examples and labels. Supervised learning taught models to map inputs to outputs. Unsupervised learning looked for structure in data. Reinforcement learning optimized behavior through rewards and penalties.
-              </p>
-            </article>
-            <article class="card history-card">
-              <span class="history-step">2</span>
-              <h3>Larger neural networks</h3>
-              <p>
-                As compute and data scaled, neural networks became far more capable. Instead of hand-crafting many narrow systems, researchers started building larger general-purpose models that could learn richer representations.
-              </p>
-            </article>
-            <article class="card history-card">
-              <span class="history-step">3</span>
-              <h3>Large language models</h3>
-              <p>
-                Those larger neural networks broke into a new category: LLMs. At first, the core pattern was simple. Give the model text. Get back text. Powerful, but still fundamentally a text-in, text-out application.
-              </p>
-            </article>
-            <article class="card history-card">
-              <span class="history-step">4</span>
-              <h3>Growing context and uploads</h3>
-              <p>
-                Context windows expanded. We started attaching files, documents, and images. The model could now see more of the world, but context was still precious and easy to exhaust.
-              </p>
-            </article>
-            <article class="card history-card">
-              <span class="history-step">5</span>
-              <h3>RAG when context was scarce</h3>
-              <p>
-                Retrieval-augmented generation emerged because we could not fit everything into context at once. Instead of handing the model all the knowledge, we searched for the relevant pieces and inserted only what was needed.
-              </p>
-            </article>
-            <article class="card history-card">
-              <span class="history-step">6</span>
-              <h3>MCPs and tool layers</h3>
-              <p>
-                Then context windows expanded again, and the frontier shifted. It was no longer only about searching for text. It was about reaching systems. MCPs and tool layers let models call services, fetch data, and trigger actions outside the chat window.
-              </p>
-            </article>
-            <article class="card history-card">
-              <span class="history-step">7</span>
-              <h3>Orchestrators and sub-agents</h3>
-              <p>
-                Once models could use tools, we needed software to coordinate them. Orchestrators assembled context, chose tools, managed retries, routed tasks, and sometimes delegated work to other models as sub-agents.
-              </p>
-            </article>
-            <article class="card history-card highlight-card">
-              <span class="history-step">8</span>
-              <h3>OS-level agents like OpenClaw</h3>
-              <p>
-                The final jump is that the orchestrator stops being only an application and starts becoming the operator of the machine it is installed on. The agent can read files, write files, use browsers, run commands, schedule tasks, message people, and act as a real computer user. That is what you have here: an LLM controlling a computer and taking instructions from you.
-              </p>
-            </article>
-          </div>
-
-          <div class="callout card">
-            <h3>The core narrative</h3>
-            <p>
-              Supervised learning, unsupervised learning, and reinforcement learning gave us better ways to train models. Larger neural networks gave us LLMs. Bigger context, uploads, RAG, MCPs, and orchestration gave those LLMs more reach. OpenClaw is what happens when that orchestrated reach extends into the operating system itself.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section id="ladder" class="section">
-        <div class="container">
-          <div class="section-heading">
-            <p class="eyebrow">The short version</p>
-            <h2>The ladder from language model to operating agent</h2>
-            <p>
-              After the long historical arc, this is the compressed mental model: LLM, chat agent, orchestrated agent, then OS-level agent runtime.
-            </p>
-          </div>
-
-          <div class="cards four-up">
-            <article class="card feature-card">
-              <div class="icon-wrap icon-blue">1</div>
-              <h3>LLM</h3>
-              <p>A language model can understand prompts, generate text, and reason over what it sees in its context window.</p>
-            </article>
-            <article class="card feature-card">
-              <div class="icon-wrap icon-purple">2</div>
-              <h3>Chat Agent</h3>
-              <p>An LLM wrapped in a conversational product with prompts, memory of the thread, uploads, and maybe retrieval or tool connectors.</p>
-            </article>
-            <article class="card feature-card">
-              <div class="icon-wrap icon-green">3</div>
-              <h3>Orchestrated Agent</h3>
-              <p>An LLM coordinated with tools, memory, sessions, and action logic so it can plan, call tools, observe results, and continue.</p>
-            </article>
-            <article class="card feature-card">
-              <div class="icon-wrap icon-gold">4</div>
-              <h3>OpenClaw</h3>
-              <p>An orchestrated agent runtime that lives on a real host machine and can act through files, browser, messaging channels, and paired devices.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="llm" class="section">
-        <div class="container">
-          <div class="section-heading">
-            <p class="eyebrow">Step 1</p>
-            <h2>What is an LLM?</h2>
-            <p>
-              A large language model is the reasoning and language engine. It can interpret text, summarize, explain, draft, compare options, and often produce surprisingly good plans. But by itself, it does not inherently live anywhere, remember across time, or take action in the real world.
-            </p>
-          </div>
-
-          <div class="cards two-up">
-            <article class="card explainer-card">
-              <h3>What an LLM does well</h3>
-              <ul class="bullet-list">
-                <li>Understand instructions and context</li>
-                <li>Generate language, code, and structured outputs</li>
-                <li>Reason over tradeoffs and alternatives</li>
-                <li>Transform information into explanations or plans</li>
-              </ul>
-            </article>
-            <article class="card explainer-card">
-              <h3>What an LLM does not do by itself</h3>
-              <ul class="bullet-list">
-                <li>Persist reliable memory unless something writes it down</li>
-                <li>Use tools unless a runtime exposes them</li>
-                <li>Operate files, browsers, or devices by default</li>
-                <li>Coordinate long-running tasks on its own</li>
-              </ul>
-            </article>
-          </div>
-
-          <div class="callout card">
-            <h3>Simple line for your audience</h3>
-            <p>
-              An LLM is the brain. Useful, impressive, but still just a brain until you connect it to a body, memory, and tools.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section class="section alt">
-        <div class="container">
-          <div class="section-heading">
-            <p class="eyebrow">Step 2</p>
-            <h2>What is a chat agent?</h2>
-            <p>
-              A chat agent is what most people are familiar with today. It is an LLM wrapped in a chat interface. Over time, chat agents have become more capable by adding new sources of context and controlled integrations.
-            </p>
-          </div>
-
-          <div class="timeline-grid">
-            <div class="timeline card">
-              <h3>The common progression</h3>
-              <ol>
-                <li><strong>Prompt only:</strong> the model only knows what is in the current message and conversation.</li>
-                <li><strong>Files attached:</strong> now it can analyze uploaded documents, images, or spreadsheets.</li>
-                <li><strong>Knowledge bases:</strong> now it can retrieve relevant facts from a separate store.</li>
-                <li><strong>Tool calling and MCPs:</strong> now it can ask external systems to do something.</li>
-              </ol>
-            </div>
-            <div class="timeline card contrast">
-              <h3>Why that still has limits</h3>
-              <ol>
-                <li>The assistant usually still lives inside a single product boundary.</li>
-                <li>Continuity often remains thread-centric instead of operational.</li>
-                <li>Execution is usually connector-driven, not OS-native.</li>
-                <li>The user experience is still “ask inside the app” rather than “agent operating in an environment.”</li>
-              </ol>
+            <div class="hero-orbit">
+              <span>Telegram</span>
+              <span>Browser</span>
+              <span>Memory</span>
+              <span>Exec</span>
+              <span>Files</span>
+              <span>Nodes</span>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="orchestration" class="section">
-        <div class="container">
-          <div class="section-heading">
-            <p class="eyebrow">Step 3</p>
-            <h2>Why orchestration matters</h2>
-            <p>
-              Orchestration is the missing concept in most AI explanations. It is the coordination layer around the model. It decides what context the model gets, which tool to call, how state is stored, how retries happen, and how multi-step work continues without falling apart.
-            </p>
-          </div>
-
-          <div class="cards three-up">
-            <article class="card feature-card">
-              <div class="icon-wrap icon-blue">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
-              </div>
-              <h3>Context orchestration</h3>
-              <p>Choosing what the model sees right now: system prompt, conversation history, memory, files, tool outputs, and runtime information.</p>
-            </article>
-            <article class="card feature-card">
-              <div class="icon-wrap icon-green">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v20M2 12h20"/></svg>
-              </div>
-              <h3>Action orchestration</h3>
-              <p>Coordinating tool calls, retries, approvals, and the next decision after the tool result comes back.</p>
-            </article>
-            <article class="card feature-card">
-              <div class="icon-wrap icon-gold">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v16H4zM8 8h8v8H8z"/></svg>
-              </div>
-              <h3>State orchestration</h3>
-              <p>Keeping sessions, memory, routing, and long-running work organized so the assistant behaves like an operator rather than a forgetful chat thread.</p>
-            </article>
-          </div>
-
-          <div class="safety-layout">
-            <div class="card">
-              <h3>The best one-line explanation</h3>
-              <blockquote>
-                The LLM is the brain. Orchestration is the operating system around the brain.
-              </blockquote>
-            </div>
-            <div class="card caution-card">
-              <h3>Why this leads naturally to OpenClaw</h3>
-              <p>
-                Once you understand orchestration, OpenClaw makes immediate sense. It is not trying to be “just another chatbot.” It is a runtime that orchestrates an agent across tools, channels, memory, and the actual host environment.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="openclaw" class="section alt">
-        <div class="container">
-          <div class="section-heading">
-            <p class="eyebrow">Step 4</p>
-            <h2>What OpenClaw is</h2>
-            <p>
-              OpenClaw is an OS-level agent runtime. According to the architecture docs, a single long-lived gateway owns the messaging surfaces, connects clients and nodes over WebSocket, manages sessions, and drives tools that run on the host or in sandboxes.
-            </p>
-          </div>
-
-          <div class="architecture card">
-            <div class="arch-row top-row">
-              <div class="arch-box">Telegram</div>
-              <div class="arch-box">Discord</div>
-              <div class="arch-box">Web UI</div>
-              <div class="arch-box">CLI / App</div>
-              <div class="arch-box">Phone nodes</div>
-            </div>
-            <div class="arch-arrow">All connect into</div>
-            <div class="arch-core">OpenClaw Gateway</div>
-            <div class="arch-subgrid">
-              <div class="arch-subbox">Sessions</div>
-              <div class="arch-subbox">Memory</div>
-              <div class="arch-subbox">Routing</div>
-              <div class="arch-subbox">Safety policy</div>
-              <div class="arch-subbox">Scheduling</div>
-            </div>
-            <div class="arch-arrow">Which drives</div>
-            <div class="arch-row bottom-row">
-              <div class="arch-box strong">Files</div>
-              <div class="arch-box strong">Browser</div>
-              <div class="arch-box strong">Commands</div>
-              <div class="arch-box strong">Messages</div>
-              <div class="arch-box strong">Node actions</div>
-            </div>
-            <p class="arch-note">
-              This is the real shift: the assistant is not only answering inside a product. It is operating through a structured runtime on an actual machine.
-            </p>
-          </div>
-
-          <div class="capability-grid">
-            <article class="card capability-card">
-              <div class="icon-wrap icon-blue">
-                <svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
-              </div>
-              <h3>Files and projects</h3>
-              <p>Read local files, write new ones, patch content, and maintain project structure inside the workspace.</p>
-            </article>
-            <article class="card capability-card">
-              <div class="icon-wrap icon-purple">
-                <svg viewBox="0 0 24 24"><path d="M3 5h18v14H3zM7 19h10"/></svg>
-              </div>
-              <h3>Browser control</h3>
-              <p>Open pages, click, type, snapshot, screenshot, and export PDFs through a managed or attached browser.</p>
-            </article>
-            <article class="card capability-card">
-              <div class="icon-wrap icon-green">
-                <svg viewBox="0 0 24 24"><path d="M8 7h8v10H8zM3 12h5M16 12h5"/></svg>
-              </div>
-              <h3>Commands and processes</h3>
-              <p>Run shell commands, inspect output, manage background processes, and perform real work on the host machine.</p>
-            </article>
-            <article class="card capability-card">
-              <div class="icon-wrap icon-gold">
-                <svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/></svg>
-              </div>
-              <h3>Channels and surfaces</h3>
-              <p>Operate through messaging platforms and control interfaces while keeping routing and sessions consistent.</p>
-            </article>
-            <article class="card capability-card">
-              <div class="icon-wrap icon-red">
-                <svg viewBox="0 0 24 24"><path d="M6 4h12v16H6zM9 8h6M9 12h6M9 16h6"/></svg>
-              </div>
-              <h3>Memory and scheduling</h3>
-              <p>Store durable notes in markdown memory, search them later, and schedule future reminders or recurring automation.</p>
-            </article>
-            <article class="card capability-card">
-              <div class="icon-wrap icon-teal">
-                <svg viewBox="0 0 24 24"><path d="M7 3h10v18H7zM3 7h4M17 7h4M3 17h4M17 17h4"/></svg>
-              </div>
-              <h3>Nodes and devices</h3>
-              <p>Extend the agent to phones and remote devices for camera, notifications, screen capture, and other device-level actions.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="comparison" class="section">
-        <div class="container">
-          <div class="section-heading">
-            <p class="eyebrow">The comparison</p>
-            <h2>Chat Agent vs OpenClaw</h2>
-            <p>
-              This table should help non-technical users see that the difference is not just “more features.” It is a different operating model.
-            </p>
-          </div>
-
-          <div class="comparison card table-card">
-            <div class="table-scroll">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Dimension</th>
-                    <th>Chat Agent</th>
-                    <th>OpenClaw</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Core idea</td>
-                    <td>An LLM wrapped in a chat interface</td>
-                    <td>An LLM embedded in an operational runtime</td>
-                  </tr>
-                  <tr>
-                    <td>Where it lives</td>
-                    <td>Inside an app or browser product</td>
-                    <td>On a real host operating system</td>
-                  </tr>
-                  <tr>
-                    <td>What it sees</td>
-                    <td>Prompt, thread history, maybe uploads and retrieval</td>
-                    <td>Prompt, sessions, memory, files, tools, channels, and device state</td>
-                  </tr>
-                  <tr>
-                    <td>How it acts</td>
-                    <td>Mostly through product-defined connectors</td>
-                    <td>Through local OS tools, browser control, messaging, scheduling, and nodes</td>
-                  </tr>
-                  <tr>
-                    <td>Continuity</td>
-                    <td>Usually chat-thread scoped</td>
-                    <td>Cross-session and cross-surface continuity can be first-class</td>
-                  </tr>
-                  <tr>
-                    <td>Tool model</td>
-                    <td>External APIs and limited integrations</td>
-                    <td>External APIs plus native file, process, browser, and device access</td>
-                  </tr>
-                  <tr>
-                    <td>Orchestration</td>
-                    <td>Usually hidden inside the product</td>
-                    <td>Explicit gateway, session, routing, and tool orchestration</td>
-                  </tr>
-                  <tr>
-                    <td>Surfaces</td>
-                    <td>Usually one main UI</td>
-                    <td>Telegram, Discord, web UI, CLI, companion apps, phones, and more</td>
-                  </tr>
-                  <tr>
-                    <td>Agency</td>
-                    <td>Often suggests what to do</td>
-                    <td>Can often do the work directly</td>
-                  </tr>
-                  <tr>
-                    <td>Risk profile</td>
-                    <td>Lower by default because it is more boxed in</td>
-                    <td>Higher power, so approvals, sandboxing, and controls matter more</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section alt">
+      <section id="summary" class="section summary-band">
         <div class="container">
           <div class="section-heading narrow">
-            <p class="eyebrow">Practical examples</p>
-            <h2>What the difference looks like in practice</h2>
+            <p class="eyebrow">Executive summary</p>
+            <h2>The important shift is from answering questions to executing work</h2>
           </div>
-
-          <div class="example-grid">
-            <article class="card scenario-card">
-              <h3>Build a website</h3>
-              <p class="scenario-line"><strong>Chat agent:</strong> suggests code and tells you how to deploy it.</p>
-              <p class="scenario-line"><strong>OpenClaw:</strong> creates the local project, writes the files, previews the result, and hands you a push-ready folder.</p>
+          <div class="cards four-up summary-grid">
+            <article class="card summary-card">
+              <h3>LLMs are changing shape</h3>
+              <p>They are moving from chat interfaces toward systems that can plan, retrieve context, use tools, and complete multi-step work.</p>
             </article>
-            <article class="card scenario-card">
-              <h3>Handle a browser task</h3>
-              <p class="scenario-line"><strong>Chat agent:</strong> explains the steps you should take.</p>
-              <p class="scenario-line"><strong>OpenClaw:</strong> can open the browser, interact with the page, and capture proof such as a PDF or screenshot.</p>
+            <article class="card summary-card">
+              <h3>OpenClaw is an orchestrator</h3>
+              <p>It coordinates models, tools, memory, workflows, and execution logic. It is the runtime layer, not the model itself.</p>
             </article>
-            <article class="card scenario-card">
-              <h3>Remember things over time</h3>
-              <p class="scenario-line"><strong>Chat agent:</strong> often depends on one thread or vendor-defined memory features.</p>
-              <p class="scenario-line"><strong>OpenClaw:</strong> can write durable notes to markdown memory on disk and search them later.</p>
+            <article class="card summary-card">
+              <h3>Enterprise value comes from the stack</h3>
+              <p>Workflow design, tool access, memory, and governance create far more practical value than raw model quality alone.</p>
             </article>
-            <article class="card scenario-card">
-              <h3>Reach devices</h3>
-              <p class="scenario-line"><strong>Chat agent:</strong> waits for you to upload the photo or information.</p>
-              <p class="scenario-line"><strong>OpenClaw:</strong> can ask a paired phone or node for a fresh camera snap, screen capture, or status update.</p>
+            <article class="card summary-card">
+              <h3>Local experimentation is here now</h3>
+              <p>Self-hosted and hybrid AI stacks are now practical enough for serious prototyping, learning, and targeted operational use.</p>
             </article>
           </div>
         </div>
       </section>
 
-      <section id="safety" class="section alt">
+      <section id="shift" class="section alt">
         <div class="container">
           <div class="section-heading">
-            <p class="eyebrow">Safety and control</p>
-            <h2>Why power changes the safety conversation</h2>
+            <p class="eyebrow">The industry shift</p>
+            <h2>Chatbots to persistent digital teammates</h2>
             <p>
-              Traditional AI safety is often about bad answers. OpenClaw adds another dimension: bad actions. That is why approvals, sandboxing, allowlists, and careful scoping are so important.
+              The winning mental model is a progression. Each step adds more operational depth, more continuity, and more leverage.
             </p>
           </div>
 
+          <div class="shift-rail card">
+            <div class="shift-node">Chatbots</div>
+            <div class="shift-arrow">→</div>
+            <div class="shift-node">Tool use</div>
+            <div class="shift-arrow">→</div>
+            <div class="shift-node">AI workflows</div>
+            <div class="shift-arrow">→</div>
+            <div class="shift-node">Agents</div>
+            <div class="shift-arrow">→</div>
+            <div class="shift-node highlight">Persistent digital teammates</div>
+          </div>
+
           <div class="cards three-up">
-            <article class="card feature-card">
-              <h3>Approvals and policy</h3>
-              <p>Sensitive actions can require explicit approval, and channel access can be restricted to known senders or controlled group policies.</p>
+            <article class="card insight-card">
+              <h3>Models are commoditizing</h3>
+              <p>Raw model quality still matters, but the strategic moat is moving upward into orchestration, memory, tooling, and reliability.</p>
             </article>
-            <article class="card feature-card">
-              <h3>Sandboxing</h3>
-              <p>OpenClaw can run tools in Docker sandboxes to reduce blast radius. The docs describe this as meaningful risk reduction, not a perfect boundary.</p>
+            <article class="card insight-card">
+              <h3>Context is a bottleneck</h3>
+              <p>Getting the right information to the model at the right time is becoming just as important as the model itself.</p>
             </article>
-            <article class="card feature-card">
-              <h3>Session separation</h3>
-              <p>Main chats, group chats, and isolated tasks can be separated so context and permissions do not blur together unnecessarily.</p>
+            <article class="card insight-card">
+              <h3>Memory is strategic</h3>
+              <p>Without durable state and retrieval, agents keep acting like impressive amnesiacs instead of useful teammates.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">What is OpenClaw?</p>
+            <h2>The runtime and orchestration layer</h2>
+            <p>
+              OpenClaw coordinates models, tools, memory, workflows, and execution logic. It is not the model itself. It is the control plane around the model.
+            </p>
+          </div>
+
+          <div class="runtime-highlight">
+            <div class="card runtime-copy">
+              <h3>Think of it this way</h3>
+              <p>
+                The model does the reasoning. The runtime decides what the model sees, what tools it can call, where memory lives, how sessions are routed, and what happens next when real work is underway.
+              </p>
+              <div class="mini-list">
+                <span>Reasoning engine</span>
+                <span>Execution logic</span>
+                <span>Session routing</span>
+                <span>State management</span>
+                <span>Tool governance</span>
+              </div>
+            </div>
+            <div class="card runtime-viz glow-card">
+              <div class="runtime-ring">
+                <div class="runtime-core">OpenClaw</div>
+                <span class="ring-item r1">Models</span>
+                <span class="ring-item r2">Tools</span>
+                <span class="ring-item r3">Memory</span>
+                <span class="ring-item r4">Workflows</span>
+                <span class="ring-item r5">Channels</span>
+                <span class="ring-item r6">Nodes</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="mental-model" class="section alt">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">The mental model</p>
+            <h2>What an operational agent system is actually made of</h2>
+          </div>
+
+          <div class="cards six-up mental-grid">
+            <article class="card mental-card"><h3>Model</h3><p>Reasoning engine</p></article>
+            <article class="card mental-card"><h3>Tool</h3><p>Capability or action</p></article>
+            <article class="card mental-card"><h3>Skill</h3><p>Reusable methodology</p></article>
+            <article class="card mental-card"><h3>Workflow</h3><p>Multi-step process</p></article>
+            <article class="card mental-card"><h3>Agent</h3><p>Decision-making coordinator</p></article>
+            <article class="card mental-card"><h3>Memory</h3><p>Persistent state and context</p></article>
+          </div>
+
+          <div class="callout card">
+            <h3>Prompt engineering is becoming system design</h3>
+            <p>
+              Prompting is no longer just phrasing. Behavioral engineering, governance, workflow prompts, and memory prompts are all becoming part of the control plane for AI systems.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="workflow" class="section">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Enterprise workflow</p>
+            <h2>How a real agent task unfolds</h2>
+            <p>
+              This is the key operational leap. The value is not in one brilliant answer. It is in consistent execution across context retrieval, planning, tool use, and validation.
+            </p>
+          </div>
+
+          <div class="workflow-layout">
+            <div class="workflow-steps card">
+              <div class="workflow-step-row">
+                <span class="workflow-number">01</span>
+                <div><strong>User asks a business question</strong><p>The task starts with an ambiguous human need, not a neatly scoped API call.</p></div>
+              </div>
+              <div class="workflow-step-row">
+                <span class="workflow-number">02</span>
+                <div><strong>Agent creates a plan</strong><p>The system turns intent into an execution path rather than jumping straight into text generation.</p></div>
+              </div>
+              <div class="workflow-step-row">
+                <span class="workflow-number">03</span>
+                <div><strong>Memory and context are retrieved</strong><p>Prior notes, files, and durable context are pulled in before action begins.</p></div>
+              </div>
+              <div class="workflow-step-row">
+                <span class="workflow-number">04</span>
+                <div><strong>Tools and APIs are called</strong><p>The agent reaches outside the prompt window and interacts with systems.</p></div>
+              </div>
+              <div class="workflow-step-row">
+                <span class="workflow-number">05</span>
+                <div><strong>Reasoning executes and validates</strong><p>The runtime can inspect outcomes, continue, retry, or adjust course.</p></div>
+              </div>
+              <div class="workflow-step-row">
+                <span class="workflow-number">06</span>
+                <div><strong>Deliverable is generated</strong><p>The output can be a message, file, report, workflow result, or follow-up action.</p></div>
+              </div>
+            </div>
+            <div class="workflow-screen card glow-card">
+              <div class="diagram-hero">
+                <img src="assets/workflow-execution.png" alt="Enterprise workflow execution diagram" />
+              </div>
+              <div class="screen-caption">This is where the orchestration story becomes concrete.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Project structure</p>
+            <h2>The system is organized around behavior, tools, and continuity</h2>
+          </div>
+
+          <div class="structure-grid card">
+            <div class="folder-col">
+              <div class="folder-item"><strong>agents/</strong><span>agent definitions</span></div>
+              <div class="folder-item"><strong>tools/</strong><span>integrations and capabilities</span></div>
+              <div class="folder-item"><strong>skills/</strong><span>reusable processes</span></div>
+              <div class="folder-item"><strong>memory/</strong><span>persistent context</span></div>
+            </div>
+            <div class="folder-col">
+              <div class="folder-item"><strong>prompts/</strong><span>system prompts</span></div>
+              <div class="folder-item"><strong>workflows/</strong><span>orchestration logic</span></div>
+              <div class="folder-item emphasis"><strong>soul.md</strong><span>behavioral identity</span></div>
+              <div class="folder-item"><strong>sessions/</strong><span>execution continuity</span></div>
+            </div>
+          </div>
+
+          <div class="cards two-up soul-section">
+            <article class="card">
+              <p class="eyebrow small">Behavioral identity</p>
+              <h3>What is soul.md?</h3>
+              <p>
+                It defines the behavioral identity of the AI system. It contains operating principles, constraints, tone, prioritization logic, and autonomy boundaries.
+              </p>
+            </article>
+            <article class="card">
+              <p class="eyebrow small">Design implication</p>
+              <h3>Prompt architecture influences behavior</h3>
+              <p>
+                When prompt layers shape reasoning, tone, memory discipline, and tool usage, prompt engineering stops being copywriting and becomes systems engineering.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="architecture" class="section architecture-section">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Architecture overview</p>
+            <h2>A gateway connecting interfaces, tools, and systems</h2>
+            <p>
+              Once you accept that an agent is an operating system around a model, the architecture becomes intuitive. A single long-lived gateway owns messaging surfaces, manages sessions, and drives tools on the host or in sandboxes.
+            </p>
+          </div>
+
+          <div class="architecture-visual card glow-card">
+            <div class="diagram-hero">
+              <img src="assets/architecture-hero.png" alt="OpenClaw architecture overview diagram" />
+            </div>
+          </div>
+
+          <div class="cards three-up">
+            <article class="card">
+              <h3>MCPs and tooling</h3>
+              <p>MCPs standardize how AI systems interact with tools and data, enabling modularity, reusable integrations, and cleaner governance.</p>
+            </article>
+            <article class="card">
+              <h3>Local AI stack</h3>
+              <p>Windows workstation, RTX 4080, Docker isolation, local models, OpenClaw orchestration, MCP servers, and experimental memory systems.</p>
+            </article>
+            <article class="card">
+              <h3>Operational reality</h3>
+              <p>The differentiator is not that the model is smarter in theory. It is that the runtime can actually operate across tools and environments.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="memory" class="section alt">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">The missing layer</p>
+            <h2>Memory is where stateless AI stops scaling</h2>
+            <p>
+              Architecture alone is not enough. Stateless chats do not hold up operationally. Persistent systems need long-term memory, project continuity, and reliable retrieval of relevant context.
+            </p>
+          </div>
+
+          <div class="memory-layout">
+            <div class="card memory-copy">
+              <h3>Why memory matters</h3>
+              <ul class="bullet-list">
+                <li>Project continuity across sessions</li>
+                <li>Durable user and entity context</li>
+                <li>Reduced repetition and lower friction</li>
+                <li>Better planning under ambiguity</li>
+                <li>Operational context that survives compaction</li>
+              </ul>
+            </div>
+            <div class="card memory-diagram glow-card">
+              <div class="diagram-hero">
+                <img src="assets/memory-layer.png" alt="Memory retrieval and continuity diagram" />
+              </div>
+            </div>
+          </div>
+
+          <div class="callout card">
+            <h3>The unsolved part</h3>
+            <p>
+              Retrieval quality, salience, governance, and memory hygiene remain hard problems. Reliable operational context is still one of the biggest open challenges in agent systems.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="risk" class="section">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Governance and risk</p>
+            <h2>Power changes the risk profile</h2>
+            <p>
+              The moment an agent can act, the safety conversation changes. It is no longer only about bad answers. It becomes about bad actions, runaway loops, permission boundaries, and observability.
+            </p>
+          </div>
+
+          <div class="risk-grid">
+            <article class="card risk-card"><h3>Permissions</h3><p>Tool permissions, credential isolation, and channel access rules define what the system can safely touch.</p></article>
+            <article class="card risk-card"><h3>Boundaries</h3><p>Sandboxing and execution separation help reduce blast radius when the model does something dumb.</p></article>
+            <article class="card risk-card"><h3>Failure modes</h3><p>Hallucinated actions, brittle plans, and infinite loops become practical engineering issues, not abstract ones.</p></article>
+            <article class="card risk-card"><h3>Controls</h3><p>Human approvals, policy checks, allowlists, and scoped sessions matter more as agent capability increases.</p></article>
+            <article class="card risk-card"><h3>Economics</h3><p>Cost control and observability become part of governance because an active runtime can spend real money and time.</p></article>
+            <article class="card risk-card"><h3>Adoption</h3><p>Enterprise uptake depends less on demos and more on whether governance can keep up with capability.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section id="future" class="section alt future-section">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Where this is going</p>
+            <h2>The direction of travel: AI-native operating systems and persistent digital teammates</h2>
+          </div>
+
+          <div class="future-grid">
+            <div class="card future-big glow-card">
+              <h3>The likely direction</h3>
+              <div class="future-tags">
+                <span>AI-native operating systems</span>
+                <span>Persistent digital teammates</span>
+                <span>Enterprise orchestration layers</span>
+                <span>Agent-to-agent coordination</span>
+                <span>Long-running workflows</span>
+                <span>Multi-agent specialization</span>
+              </div>
+            </div>
+            <div class="card takeaway-card">
+              <h3>Key takeaways</h3>
+              <ul class="bullet-list">
+                <li>Models are only one layer of the stack</li>
+                <li>OpenClaw demonstrates orchestration patterns</li>
+                <li>Prompt architecture strongly influences behavior</li>
+                <li>MCP ecosystems enable composable AI systems</li>
+                <li>Memory and governance remain major challenges</li>
+                <li>Local experimentation is increasingly practical</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section demo-section">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Demo / screenshots</p>
+            <h2>Show orchestration, not just model intelligence</h2>
+            <p>
+              The final step is proof. Screenshots are more persuasive than generic stock art because they show the system behaving like a runtime, not merely describing itself.
+            </p>
+          </div>
+
+          <div class="screenshot-grid">
+            <article class="card screenshot-card featured-shot">
+              <div class="shot-frame">
+                <img src="assets/oc-status-live.png" alt="Live OpenClaw status screenshot" />
+              </div>
+              <h3>Runtime and gateway proof</h3>
+              <p>Actual local runtime status showing gateway reachability, channels, sessions, and security posture.</p>
+            </article>
+            <article class="card screenshot-card">
+              <div class="shot-frame">
+                <img src="assets/oc-memory-live.png" alt="Live OpenClaw memory search screenshot" />
+              </div>
+              <h3>Memory retrieval proof</h3>
+              <p>Real local semantic memory retrieval, which makes the continuity story concrete.</p>
+            </article>
+            <article class="card screenshot-card">
+              <div class="shot-frame">
+                <img src="assets/oc-sessions-live.png" alt="Live OpenClaw sessions screenshot" />
+              </div>
+              <h3>Session and routing proof</h3>
+              <p>Shows the multi-session runtime behavior that separates an orchestrator from a basic chat app.</p>
             </article>
           </div>
         </div>
       </section>
 
       <section class="section final-section">
-        <div class="container final-card card">
-          <h2>Bottom line</h2>
+        <div class="container final-card card glow-card">
+          <p class="eyebrow">Bottom line</p>
+          <h2>OpenClaw shows what happens when an LLM stops being just a chat surface and starts becoming an operator</h2>
           <p>
-            OpenClaw is best understood as the next step after chat agents and orchestration. It combines models with sessions, memory, tools, messaging, browser control, local execution, and device connectivity. That makes it far more operational than a typical chat product, which is exactly why it also needs stronger safety boundaries.
+            The strategic story is not just better models. It is better orchestration. OpenClaw makes that visible by combining models with memory, workflows, tools, sessions, messaging, browser control, local execution, and device connectivity into a single operational runtime.
           </p>
           <p class="source-note">
-            This page was drafted from OpenClaw’s local documentation on architecture, agent runtime, sessions, memory, browser control, features, and sandboxing.
+            This page is based on the provided presentation flow and grounded in OpenClaw documentation on architecture, features, browser control, sandboxing, and memory.
           </p>
         </div>
       </section>
@@ -571,7 +489,7 @@
 
     <footer class="site-footer">
       <div class="container footer-wrap">
-        <p>OpenClaw Explained</p>
+        <p>OpenClaw: Agent Orchestration and AI-Native Systems</p>
         <a href="#top">Back to top ↑</a>
       </div>
     </footer>
